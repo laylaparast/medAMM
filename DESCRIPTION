@@ -1,0 +1,10 @@
+Package: medAMM
+Type: Package
+Title: Mediation Analysis with Multiple Mediators using a Weighted Approach
+Version: 1.0
+Date: 2023-12-07
+Author: Layla Parast
+Maintainer: Layla Parast <parast@austin.utexas.edu>
+Description: Provides functions to calculates the proportion of the exposure effect explained by individual mediators, as well as by all the mediators together. Only appropriate for a binary outcome and a binary exposure; mediators and confounders may be binary and/or continuous. Implements the weighting approach of VanderWeele TJ, Vansteelandt S (2014). "Mediation Analysis with Multiple Mediators." Epidemiol Methods. 2(1):95-115. 
+License: GPL
+Imports: survey, ggplot2, stats
