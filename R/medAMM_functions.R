@@ -24,7 +24,7 @@ causal.calc = function(datas, confounders, outcome, mainpred, mediators, survey=
 	new.data = datas
 	new.data$variables$my.weight =my.weight
 	new.data$variables$my.weight.surv = new.data$variables$my.weight*new.data$variables$new_weight
-	data.surv.new <- s(id=~newpsu,strata=~newstrat, weights=~my.weight.surv, nest=TRUE, data=new.data$variables)
+	data.surv.new <- svydesign(ids=~newpsu,strata=~newstrat, weights=~my.weight.surv, nest=TRUE, data=new.data$variables)
 	data.surv.new$variables$subwant = data.surv.new$variables[,names(data.surv.new$variables) == mainpred]
 	data.surv.white=subset(data.surv.new, subwant==0)
 	A = svymean(as.formula(paste("~",outcome)), design = data.surv.white, na.rm=T)[1]
